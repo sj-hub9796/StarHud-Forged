@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "fin.starhud.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "starhudforged.refmap.json",
+  "mixins": [
+    "LivingEntityMixin"
+  ],
+  "client": [
+    "GuiMixin",
+    "WindowMixin",
+    "accessor.BossHealthOverlayAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
