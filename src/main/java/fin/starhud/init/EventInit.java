@@ -1,9 +1,10 @@
 package fin.starhud.init;
 
+import fin.starhud.Helper;
 import fin.starhud.Main;
+import fin.starhud.compat.ImmediatelyFastCompat;
 import fin.starhud.config.GeneralSettings;
 import fin.starhud.hud.HUDComponent;
-import fin.starhud.integration.ImmediatelyFastAPI;
 import fin.starhud.screen.EditHUDScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -34,12 +35,12 @@ public class EventInit {
     private static void onRenderGui(RenderGuiOverlayEvent.Post event) {
         if (SETTINGS.disableHUDRendering) return;
 
-        if (SETTINGS.shouldBatchHUDWithImmediatelyFast && ImmediatelyFastAPI.isModPresent()) {
-            ImmediatelyFastAPI.beginHudBatching();
+        if (SETTINGS.shouldBatchHUDWithImmediatelyFast && Helper.isModPresent("immediatelyfast")) {
+            ImmediatelyFastCompat.beginHudBatching();
             if (!Minecraft.getInstance().options.hideGui)
                 if (HUDComponent.getInstance().shouldRenderInGameScreen())
                     HUDComponent.getInstance().renderAll(event.getGuiGraphics());
-            ImmediatelyFastAPI.endHudBatching();
+            ImmediatelyFastCompat.endHudBatching();
         } else {
             if (!Minecraft.getInstance().options.hideGui)
                 if (HUDComponent.getInstance().shouldRenderInGameScreen())

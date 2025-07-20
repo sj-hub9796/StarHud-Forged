@@ -4,7 +4,6 @@ import fin.starhud.config.Settings;
 import fin.starhud.init.ConfigInit;
 import fin.starhud.init.EventInit;
 import fin.starhud.init.KeybindInit;
-import fin.starhud.integration.ImmediatelyFastAPI;
 import net.minecraft.client.KeyMapping;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -22,7 +21,5 @@ public class Main {
         ConfigInit.init();
         KeybindInit.init(bus);
         EventInit.init();
-
-        ImmediatelyFastAPI.init();
     }
 }

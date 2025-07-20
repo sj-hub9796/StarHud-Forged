@@ -1,13 +1,14 @@
 package fin.starhud.screen;
 
+import fin.starhud.Helper;
 import fin.starhud.Main;
+import fin.starhud.compat.ImmediatelyFastCompat;
 import fin.starhud.config.BaseHUDSettings;
 import fin.starhud.config.GeneralSettings;
 import fin.starhud.config.Settings;
 import fin.starhud.helper.*;
 import fin.starhud.hud.AbstractHUD;
 import fin.starhud.hud.HUDComponent;
-import fin.starhud.integration.ImmediatelyFastAPI;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -296,10 +297,10 @@ public class EditHUDScreen extends Screen {
     @Override
     public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
 
-        if (SETTINGS.shouldBatchHUDWithImmediatelyFast && ImmediatelyFastAPI.isModPresent()) {
-            ImmediatelyFastAPI.beginHudBatching();
+        if (SETTINGS.shouldBatchHUDWithImmediatelyFast && Helper.isModPresent("immediatelyfast")) {
+            ImmediatelyFastCompat.beginHudBatching();
             renderElements(context, mouseX, mouseY, delta);
-            ImmediatelyFastAPI.endHudBatching();
+            ImmediatelyFastCompat.endHudBatching();
         } else {
             renderElements(context, mouseX, mouseY, delta);
         }

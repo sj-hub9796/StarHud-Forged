@@ -74,4 +74,8 @@ public class Helper {
     public static int getStep(int curr, int max, int maxStep) {
         return Mth.clamp(Math.round((float) curr * maxStep / (float) max), 0, maxStep);
     }
+
+    public static boolean isModPresent(String id) {
+        return ModList.get().isLoaded(id);
+    }
 }
