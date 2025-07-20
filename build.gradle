@@ -170,7 +170,7 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     implementation("me.shedaniel.cloth:cloth-config-forge:${project.cloth_config_version}")
-    implementation("maven.modrinth:immediatelyfast:1.5.1+1.20.4-forge")
+    compileOnly("maven.modrinth:immediatelyfast:1.5.1+1.20.4-forge")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
