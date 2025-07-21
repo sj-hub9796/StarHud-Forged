@@ -1,11 +1,11 @@
 package fin.starhud.hud;
 
+import com.mojang.blaze3d.platform.Window;
 import fin.starhud.config.BaseHUDSettings;
 import fin.starhud.config.ConditionalSettings;
 import fin.starhud.helper.Box;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import com.mojang.blaze3d.platform.Window;
 
 public abstract class AbstractHUD implements HUDInterface {
     private static final Window WINDOW = Minecraft.getInstance().getWindow();
@@ -108,7 +108,7 @@ public abstract class AbstractHUD implements HUDInterface {
     }
 
     public boolean isScaled() {
-        return this.getSettings().getScale() != 0 || (this.getSettings().getScale() / (double) WINDOW.getGuiScale()) == 1;
+        return this.getSettings().getScale() != 0 && (this.getSettings().getScale() / WINDOW.getGuiScale()) == 1;
     }
 
     public BaseHUDSettings getSettings() {

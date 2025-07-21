@@ -5,29 +5,30 @@ import fin.starhud.Main;
 import fin.starhud.config.hud.TargetedCrosshairSettings;
 import fin.starhud.helper.RenderUtils;
 import fin.starhud.hud.AbstractHUD;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.FormattedCharSequence;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
-import net.minecraft.world.entity.boss.EnderDragonPart;
 import net.minecraft.world.entity.NeutralMob;
-import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.entity.animal.SnowGolem;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.animal.allay.Allay;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.animal.SnowGolem;
+import net.minecraft.world.entity.boss.EnderDragonPart;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.util.FormattedCharSequence;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraft.core.BlockPos;
 import net.minecraftforge.registries.ForgeRegistries;
 
 
@@ -156,7 +157,7 @@ public class TargetedCrosshairHUD extends AbstractHUD {
     private int cachedIndex = -1;
 
     public boolean renderEntityInfoHUD(GuiGraphics context) {
-        Entity targetedEntity = Minecraft.getInstance().crosshairPickEntity;
+        Entity targetedEntity = ((EntityHitResult) CLIENT.hitResult).getEntity();
 
         if (!targetedEntity.equals(cachedTargetedEntity)) {
             cachedTargetedEntity = targetedEntity;

@@ -9,7 +9,6 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 import net.minecraft.client.Minecraft;
 
-
 import java.util.ArrayList;
 import java.util.List;
 

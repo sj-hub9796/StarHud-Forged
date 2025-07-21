@@ -2,9 +2,9 @@ package fin.starhud.mixin;
 
 import fin.starhud.helper.StatusEffectAttribute;
 import fin.starhud.hud.HUDComponent;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
