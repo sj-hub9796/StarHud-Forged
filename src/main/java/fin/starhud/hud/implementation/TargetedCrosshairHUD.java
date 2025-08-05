@@ -158,6 +158,10 @@ public class TargetedCrosshairHUD extends AbstractHUD {
     public boolean renderEntityInfoHUD(GuiGraphics context) {
         Entity targetedEntity = Minecraft.getInstance().crosshairPickEntity;
 
+        if (targetedEntity == null) {
+            return false;
+        }
+
         if (!targetedEntity.equals(cachedTargetedEntity)) {
             cachedTargetedEntity = targetedEntity;
             cachedEntityName = targetedEntity.getName().getVisualOrderText();
