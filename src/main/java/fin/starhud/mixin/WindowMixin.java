@@ -1,7 +1,7 @@
 package fin.starhud.mixin;
 
-import com.mojang.blaze3d.platform.Window;
 import fin.starhud.hud.HUDComponent;
+import com.mojang.blaze3d.platform.Window;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

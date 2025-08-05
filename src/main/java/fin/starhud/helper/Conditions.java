@@ -4,8 +4,8 @@ import fin.starhud.hud.implementation.TargetedCrosshairHUD;
 import fin.starhud.mixin.accessor.BossHealthOverlayAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ChatScreen;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.tags.FluidTags;
 
 public class Conditions {
 
